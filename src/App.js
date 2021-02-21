@@ -18,14 +18,18 @@ function App() {
 
     // If category is just "random", just append the numberOfJokes at the end of the URL
     if (category === "random") {
-      console.log("Random option selected");
       fetchUrl += numberOfJokes;
-      console.log(fetchUrl);
+    } else {
+      // do the above and specify which category.
+      fetchUrl += `${numberOfJokes}?limitTo=[${category}]`;
     }
 
-    // fetch(`${fetchUrl}`)
-    //   .then((res) => res.json())
-    //   .then((data) => setJokes(data.value.joke));
+    fetch(fetchUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        // The "value" property contains the array of jokes.
+        setJokes(data.value);
+      });
     e.preventDefault();
   };
 
@@ -40,31 +44,28 @@ function App() {
           name="category"
         >
           <option value="random">Random</option>
-          {/* http://api.icndb.com/jokes/random/<number> */}
           <option value="nerdy">Nerdy</option>
-          {/* <number>?limitTo=[nerdy] */}
           <option value="explicit">Explicit</option>
-          {/* <number>?limitTo=[explicit] */}
           <option value="nerdy,explicit">Nerdy/Explicit</option>
-          {/* <number>?limitTo=[nerdy,explicit] */}
         </select>
-
         <label>How many jokes?</label>
         <input
           type="number"
           value={numberOfJokes}
           onChange={(e) => setNumberOfJokes(e.target.value)}
         />
-
         <input type="submit" value="Get jokes" />
-
-        {/* Outputting vars */}
-        <h2>{category}</h2>
-        <h2>{numberOfJokes}</h2>
-        {/* {jokes && (jokes.map((joke) => {
-          <h2 className="joke">{joke}</h2>;
-        }))} */}
       </form>
+      {/* Outputting vars */}
+      <h2>{category}</h2>
+      <h2>{numberOfJokes}</h2>
+      {/* If there ARE jokes, render them, of course. */}
+      {jokes &&
+        jokes.map((joke) => (
+          <h2 className="joke" key={joke.id}>
+            {joke.joke}
+          </h2>
+        ))}
     </div>
   );
 }
