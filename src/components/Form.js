@@ -45,6 +45,7 @@ const Form = ({ setJokes }) => {
       <label>How many jokes?</label>
       <input
         type="number"
+        min="1"
         step
         value={numberOfJokes}
         onChange={(e) => setNumberOfJokes(e.target.value)}
