@@ -31,25 +31,29 @@ const Form = ({ setJokes }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Which category?</label>
-      <select
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-        name="category"
-      >
-        <option value="random">Random</option>
-        <option value="nerdy">Nerdy</option>
-        <option value="explicit">Explicit</option>
-        <option value="nerdy,explicit">Nerdy/Explicit</option>
-      </select>
-      <label>How many jokes?</label>
-      <input
-        type="number"
-        min="1"
-        step
-        value={numberOfJokes}
-        onChange={(e) => setNumberOfJokes(e.target.value)}
-      />
+      <div id="category">
+        <label>Which category?</label>
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          name="category"
+        >
+          <option value="random">Random</option>
+          <option value="nerdy">Nerdy</option>
+          <option value="explicit">Explicit</option>
+          <option value="nerdy,explicit">Nerdy/Explicit</option>
+        </select>
+      </div>
+      <div id="num-of-jokes"> 
+        <label>How many jokes?</label>
+        <input
+          type="number"
+          min="1"
+          step
+          value={numberOfJokes}
+          onChange={(e) => setNumberOfJokes(e.target.value)}
+        />
+      </div>
       <input type="submit" value="Get jokes" />
     </form>
   );
