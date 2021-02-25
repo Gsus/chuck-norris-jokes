@@ -1,13 +1,21 @@
-const Jokes = ({ jokes }) => {
+import fist from '../fist.svg';
+
+const Jokes = ({ jokes, resetJokes }) => {
   return (
-    // If there ARE jokes, render them, of course.
-    jokes &&
-    jokes.map((joke) => (
-      <h2 className="joke" key={joke.id}>
-        {joke.joke}
-      </h2>
-    ))
-  );
+    <div>
+      <button onClick={resetJokes} className="btn">Get new jokes</button>
+      <div id="jokes">
+        {jokes.map((joke) => (
+        <div className="joke" key={joke.id}>
+          <img src={fist} alt="Fist icon" className="icon"/>
+          <p className="joke-text">
+            {joke.joke}
+          </p>
+        </div>
+        ))}
+      </div>
+    </div>
+  )
 };
 
 export default Jokes;

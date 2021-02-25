@@ -9,9 +9,6 @@ const Form = ({ setJokes }) => {
   let fetchUrl = `${API_BASE_URL}`;
 
   const handleSubmit = (e) => {
-    console.log(`The category is ${category}`);
-    console.log(`The numberOfJokes is ${numberOfJokes}`);
-
     // If category is just "random", just append the numberOfJokes at the end of the URL
     if (category === "random") {
       fetchUrl += numberOfJokes;
@@ -54,7 +51,7 @@ const Form = ({ setJokes }) => {
           onChange={(e) => setNumberOfJokes(e.target.value)}
         />
       </div>
-      <input type="submit" value="Get jokes" />
+      <input type="submit" value="Get jokes" className="btn" id="fetch-btn"/>
     </form>
   );
 };

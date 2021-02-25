@@ -5,6 +5,7 @@
 }
 
 h1 {
+  letter-spacing: 0.15rem;
   line-height: 1.2;
   margin-bottom: 0.55rem;
 }
@@ -26,21 +27,77 @@ form {
   & input {
     margin: 0 auto;
     width: 50%;
+    color: inherit;
+    background: #1f1914;
+    border: none;
+    padding: 0.4rem;
+    border-radius: 0.2rem;
   }
 
   input[type="number"] {
     margin-bottom: 0.8rem;
+    width: 25%;
   }
 }
 
-/* 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
+#jokes {
+  max-height: 75vh;
+  overflow: auto;
+}
+
+.icon {
+  margin: 0 auto;
+  width: 2.7rem;
+  height: auto;
+}
+
+.joke {
+  margin-top: 0.55rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #d2691e26;
+}
+
+.joke-text {
+  text-align: initial;
+  line-height: 1.42;
+  font-size: 1.2rem;
+  margin-top: 0.45rem;
+}
+
+.btn {
+  color: inherit;
+  width: auto;
+  background: #1f1914;
+  border: none;
+  margin: 1.45rem 0;
+  padding: 0.75rem;
+  border-radius: 0.2rem;
+}
+
+#fetch-btn {
+  margin-top: initial;
+  margin-bottom: initial;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.35rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.25);
+  border-radius: 0.4rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d2691e4f;
+  border-radius: 0.7rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1f1914;
+}
