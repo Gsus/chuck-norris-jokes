@@ -1,4 +1,6 @@
 import fist from '../fist.svg';
+// HTML entity encoder/decoder
+import he from 'he';
 
 const Jokes = ({ jokes, resetJokes }) => {
   return (
@@ -9,7 +11,7 @@ const Jokes = ({ jokes, resetJokes }) => {
         <div className="joke" key={joke.id}>
           <img src={fist} alt="Fist icon" className="icon"/>
           <p className="joke-text">
-            {joke.joke}
+            {he.decode(joke.joke)}
           </p>
         </div>
         ))}
