@@ -13,7 +13,6 @@ h1 {
 
 form {
   width: 75%;
-  background: #807d7b85;
   background: #6b686585;
   border-radius: 0.35rem;
   margin: 1.35rem auto 0;
@@ -45,6 +44,62 @@ form {
     margin-bottom: 0.8rem;
     width: 25%;
   }
+
+  #spinner {
+    margin: 2rem auto;
+    width: 50px;
+    height: 50px;
+    position: relative;
+
+    & div {
+      position: absolute;
+      border: 5px solid #1f19149a;
+      border-bottom-color: cornsilk;
+      // background: chocolate;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+    & div:first-of-type {
+      animation: rotateOne 0.77s ease-in-out infinite;
+    }
+
+    & div:nth-of-type(2) {
+      animation: rotateTwo 0.77s ease-in-out 0.1s infinite;
+    }
+  }
+
+  @keyframes rotateOne {
+    0% {
+      transform: rotate(0deg);
+      border-bottom-color: #d2691e4f;
+    }
+
+    50% {
+      border-bottom-color: #a3958a;
+    }
+
+    100% {
+      transform: rotate(360deg);
+      border-bottom-color: #d2691e4f;
+    }
+  }
+  @keyframes rotateTwo {
+    0% {
+      transform: rotate(0deg);
+      border-bottom-color: #d2691e4f;
+    }
+
+    50% {
+      border-bottom-color: #a3958a;
+    }
+
+    100% {
+      transform: rotate(360deg);
+      border-bottom-color: #d2691e4f;
+    }
+  }
 }
 
 #jokes {
@@ -62,7 +117,8 @@ form {
   margin-top: 0.55rem;
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #d2691e26;
+  border-bottom: 2.6px solid #d2691e26;
+  border-radius: 0.3rem;
 }
 
 .joke-text {

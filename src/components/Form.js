@@ -3,12 +3,15 @@ import { useState } from "react";
 const Form = ({ setJokes }) => {
   const [category, setCategory] = useState("random"),
     [numberOfJokes, setNumberOfJokes] = useState(1),
+    [isFetching, setIsFetching] = useState(false),
     // Example url. 1 random, explicit joke
     // http://api.icndb.com/jokes/random/1?limitTo=[explicit]";
     API_BASE_URL = "http://api.icndb.com/jokes/random/";
   let fetchUrl = `${API_BASE_URL}`;
 
   const handleSubmit = (e) => {
+    // Show the spinner
+    setIsFetching(true);
     // If category is just "random", just append the numberOfJokes at the end of the URL
     if (category === "random") {
       fetchUrl += numberOfJokes;
@@ -17,6 +20,7 @@ const Form = ({ setJokes }) => {
       fetchUrl += `${numberOfJokes}?limitTo=[${category}]`;
     }
 
+    // Get the jokes
     fetch(fetchUrl)
       .then((res) => res.json())
       .then((data) => {
@@ -28,6 +32,7 @@ const Form = ({ setJokes }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+
       <div id="category">
         <label>Which category?</label>
         <select
@@ -41,6 +46,7 @@ const Form = ({ setJokes }) => {
           <option value="nerdy,explicit">Nerdy/Explicit</option>
         </select>
       </div>
+
       <div id="num-of-jokes"> 
         <label>How many jokes?</label>
         <input
@@ -51,7 +57,15 @@ const Form = ({ setJokes }) => {
           onChange={(e) => setNumberOfJokes(e.target.value)}
         />
       </div>
+
       <input type="submit" value="Get jokes" className="btn" id="fetch-btn"/>
+
+      {/* If it's getting the jokes, show the "loading" spinner */}
+      {isFetching && 
+      <div id="spinner">
+        <div></div>
+        <div></div>
+      </div>}
     </form>
   );
 };
