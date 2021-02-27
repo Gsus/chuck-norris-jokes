@@ -52,11 +52,18 @@ const Form = ({ setJokes }) => {
         <input
           type="number"
           min="1"
+          max="100"
           step
           value={numberOfJokes}
           onChange={(e) => setNumberOfJokes(e.target.value)}
         />
       </div>
+
+      {/* Display a message depending on a range of jokes, before submitting. Just joking around; don't mind this. */}
+      {numberOfJokes >= 30 && numberOfJokes < 60 && <small>Someone's got some free time, huh?</small>}
+      {numberOfJokes >= 60 && numberOfJokes != 69 && numberOfJokes < 100 && <small>Damn, you really are looking for a laugh</small>}
+      {numberOfJokes == 69 && <small>Nice</small>}
+      {numberOfJokes == 100 && <small>Chuck would be proud of you, but let's keep it a 100 at a time, shall we? <br/>Do tell me if you made it this far, tho</small>}
 
       <input type="submit" value="Get jokes" className="btn" id="fetch-btn"/>
 

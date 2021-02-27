@@ -13,7 +13,7 @@ body {
   color: #f4f4f4;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.65)),
     url("./Martial-arts-bg.jpg") center center/cover no-repeat;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 h1,
