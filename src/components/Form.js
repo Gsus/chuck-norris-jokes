@@ -4,6 +4,7 @@ const Form = ({ setJokes }) => {
   const [category, setCategory] = useState("random"),
     [numberOfJokes, setNumberOfJokes] = useState(1),
     [isFetching, setIsFetching] = useState(false),
+    [error, setError] = useState(false),
     // Example url. 1 random, explicit joke
     // http://api.icndb.com/jokes/random/1?limitTo=[explicit]";
     API_BASE_URL = "http://api.icndb.com/jokes/random/";
@@ -26,6 +27,14 @@ const Form = ({ setJokes }) => {
       .then((data) => {
         // The "value" property contains the array of jokes.
         setJokes(data.value);
+      })
+      .catch(() => {
+        setError(true);
+        // After ~3.5s, hide the error and the loading spinner
+        setTimeout(() => {
+          setError(false);
+          setIsFetching(false);
+        }, 3500);
       });
     e.preventDefault();
   };
@@ -64,6 +73,9 @@ const Form = ({ setJokes }) => {
       {numberOfJokes >= 60 && numberOfJokes != 69 && numberOfJokes < 100 && <small>Damn, you really are looking for a laugh</small>}
       {numberOfJokes == 69 && <small>Nice</small>}
       {numberOfJokes == 100 && <small>Chuck would be proud of you, but let's keep it a 100 at a time, shall we? <br/>Do tell me if you made it this far, tho</small>}
+
+      {/* Show an error if there is one when getting the jokes*/}
+      {error && <small id="error">There's been an error while getting the jokes. Try again!</small>}
 
       <input type="submit" value="Get jokes" className="btn" id="fetch-btn"/>
 
