@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/chuck-norris-jokes/static/css/main.907f62f8.chunk.css",
+    "main.js": "/chuck-norris-jokes/static/js/main.a2d9ce91.chunk.js",
+    "main.js.map": "/chuck-norris-jokes/static/js/main.a2d9ce91.chunk.js.map",
+    "runtime-main.js": "/chuck-norris-jokes/static/js/runtime-main.53f7e796.js",
+    "runtime-main.js.map": "/chuck-norris-jokes/static/js/runtime-main.53f7e796.js.map",
+    "static/js/2.ceb8616e.chunk.js": "/chuck-norris-jokes/static/js/2.ceb8616e.chunk.js",
+    "static/js/2.ceb8616e.chunk.js.map": "/chuck-norris-jokes/static/js/2.ceb8616e.chunk.js.map",
+    "index.html": "/chuck-norris-jokes/index.html",
+    "static/css/main.907f62f8.chunk.css.map": "/chuck-norris-jokes/static/css/main.907f62f8.chunk.css.map",
+    "static/js/2.ceb8616e.chunk.js.LICENSE.txt": "/chuck-norris-jokes/static/js/2.ceb8616e.chunk.js.LICENSE.txt",
+    "static/media/ChuckNorrisPointing.92800109.png": "/chuck-norris-jokes/static/media/ChuckNorrisPointing.92800109.png",
+    "static/media/index.scss": "/chuck-norris-jokes/static/media/Martial-arts-bg.db667f82.jpg",
+    "static/media/fist.cd46272f.svg": "/chuck-norris-jokes/static/media/fist.cd46272f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53f7e796.js",
+    "static/js/2.ceb8616e.chunk.js",
+    "static/css/main.907f62f8.chunk.css",
+    "static/js/main.a2d9ce91.chunk.js"
+  ]
+}
