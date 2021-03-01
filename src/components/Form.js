@@ -7,7 +7,7 @@ const Form = ({ setJokes }) => {
     [error, setError] = useState(false),
     // Example url. 1 random, explicit joke
     // http://api.icndb.com/jokes/random/1?limitTo=[explicit]";
-    API_BASE_URL = "http://api.icndb.com/jokes/random/";
+    API_BASE_URL = "https://api.icndb.com/jokes/random/";
   let fetchUrl = `${API_BASE_URL}`;
 
   const handleSubmit = (e) => {
